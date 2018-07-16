@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">KotlinMessenger</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="login">Login</string>
+    <string name="registrationText">REGISTRATION</string>
+    <string name="user">Already an user? Login</string>
+    <string name="welcome">Welcome!</string>
+    <string name="threeDots">...</string>
+    <string name="email">Email:</string>
+    <string name="confirmationEmail">Confirm email:</string>
+</resources>
