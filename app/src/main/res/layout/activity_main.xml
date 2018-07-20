@@ -20,8 +20,10 @@
         android:background="@android:color/white"
         android:hint="@string/username"
         android:padding="16dp"
+        android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:singleLine="true"
         app:layout_constraintTop_toBottomOf="@+id/view" />
 
     <EditText
@@ -32,8 +34,10 @@
         android:background="@android:color/white"
         android:hint="@string/email"
         android:padding="16dp"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="@+id/username_editText"
         app:layout_constraintStart_toStartOf="@+id/username_editText"
+        android:singleLine="true"
         app:layout_constraintTop_toBottomOf="@+id/username_editText" />
 
     <!--EditText
@@ -63,13 +67,14 @@
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
         android:background="@android:color/white"
+        android:ems="10"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:padding="16dp"
+        android:singleLine="true"
         app:layout_constraintEnd_toEndOf="@+id/email_editText"
         app:layout_constraintStart_toStartOf="@+id/email_editText"
-        app:layout_constraintTop_toBottomOf="@+id/email_editText"
-        android:ems="10"
-        android:inputType="textPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/email_editText" />
 
     <TextView
         android:id="@+id/alreadyUser_TextView"
@@ -119,23 +124,6 @@
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/view" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:onClick="forceCrash"
-        android:text="Force Crash!"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/alreadyUser_TextView" />
-
 
 
 </android.support.constraint.ConstraintLayout>
