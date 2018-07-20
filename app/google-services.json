@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "83188792980",
+    "firebase_url": "https://instagramfirebase-8cc48.firebaseio.com",
+    "project_id": "instagramfirebase-8cc48",
+    "storage_bucket": "instagramfirebase-8cc48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:83188792980:android:2b3ffede0b195dca",
+        "android_client_info": {
+          "package_name": "me.luisfergromo.kotlinmessenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "83188792980-a6lghpps4tu3832l954ecg8jmqk6hsaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX8ZLDfD1H_iFd2nQ0ydWSNGvICoPv1qs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
