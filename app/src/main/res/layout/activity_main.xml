@@ -111,6 +111,7 @@
         android:ems="10"
         android:text="@string/welcome"
         android:textAlignment="center"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintStart_toStartOf="@+id/view"
