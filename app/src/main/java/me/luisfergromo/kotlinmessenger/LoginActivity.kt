@@ -1,14 +1,26 @@
 package me.luisfergromo.kotlinmessenger
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log.wtf
+import kotlinx.android.synthetic.main.activity_login.*
 
-class LoginActivity:AppCompatActivity(){
+class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-    setContentView(R.layout.activity_login)
+        setContentView(R.layout.activity_login)
+
+        loginBtn.setOnClickListener {
+            val email = email_TextEdit.text.toString()
+            val password = password_EditText.text.toString()
+
+            //Log.d("Login", "Attemp Login with email/pw $email/***")
+            wtf("Login", "Attemp Login with email/pw $email/$password")
+            backToRegistrationBtn.setOnClickListener {
+                finish()
+            }
+        }
     }
 }
