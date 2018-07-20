@@ -6,7 +6,6 @@
     <string name="registrationText">REGISTRATION</string>
     <string name="user">Already an user? Login</string>
     <string name="welcome">Welcome!</string>
-    <string name="threeDots">...</string>
     <string name="email">Email:</string>
     <string name="confirmationEmail">Confirm email:</string>
     <string name="backToRegistration">Back to registration</string>

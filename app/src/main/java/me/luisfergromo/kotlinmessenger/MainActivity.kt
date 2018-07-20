@@ -29,15 +29,19 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter in email/pw", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            wtf("RegisterBtn", "Email is: " + email)
-            wtf("RegisterBtn", "Password: $password")
 
-            //Firebase Auth to create a user with email and password
+            /*
+                wtf("RegisterBtn", "Email is: " + email)
+                wtf("RegisterBtn", "Password: $password")
+            */
+
+            // TODO: Firebase Auth to create a user with email and password
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener {
                         if (!it.isSuccessful) return@addOnCompleteListener
                         //else is successful
                         wtf("firebaseCreate", "Successful created user uid ${it.result.user.uid}")
+                        Toast.makeText(this, "Successful created user email:  ${it.result.user.email} uid assigned", Toast.LENGTH_SHORT).show()
                     }
                     .addOnFailureListener {
                         wtf("firebaseCreate", "Failed to created user  ${it.message}")
