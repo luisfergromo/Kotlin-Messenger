@@ -3,16 +3,12 @@ package me.luisfergromo.kotlinmessenger
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.util.Log.wtf
+import android.widget.Toast
 import com.crashlytics.android.Crashlytics
+import com.google.firebase.auth.FirebaseAuth
 import io.fabric.sdk.android.Fabric
 import kotlinx.android.synthetic.main.activity_main.*
-
-
-
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,10 +25,24 @@ class MainActivity : AppCompatActivity() {
             val email = email_editText.text.toString()
             val password = password_editText.text.toString()
 
-            Log.d("RegisterBtn", "Email is: " + email)
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Please enter in email/pw", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+            wtf("RegisterBtn", "Email is: " + email)
             wtf("RegisterBtn", "Password: $password")
 
             //Firebase Auth to create a user with email and password
+            FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener {
+                        if (!it.isSuccessful) return@addOnCompleteListener
+                        //else is successful
+                        wtf("firebaseCreate", "Successful created user uid ${it.result.user.uid}")
+                    }
+                    .addOnFailureListener {
+                        wtf("firebaseCreate", "Failed to created user  ${it.message}")
+                        Toast.makeText(this, "Failed to created user: ${it.message}", Toast.LENGTH_SHORT).show()
+                    }
         }
         alreadyUser_TextView.setOnClickListener {
             //wtf("MainActivity","Try to show login activity")
