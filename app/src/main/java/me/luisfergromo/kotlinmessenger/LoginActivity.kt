@@ -18,9 +18,9 @@ class LoginActivity : AppCompatActivity() {
 
             //Log.d("Login", "Attemp Login with email/pw $email/***")
             wtf("Login", "Attemp Login with email/pw $email/$password")
-            backToRegistrationBtn.setOnClickListener {
-                finish()
-            }
+        }
+        backToRegistrationBtn.setOnClickListener {
+            finish()
         }
     }
 }
