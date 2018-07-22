@@ -17,12 +17,13 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         loginBtn.setOnClickListener {
-            /*
             val email = email_TextEdit.text.toString()
             val password = password_EditText.text.toString()
-             */
+
+            /*
             val email = "l@l.com"
             val password = "01234567890"
+             */
 
 
             //Log.d("Login", "Attemp Login with email/pw $email/***")

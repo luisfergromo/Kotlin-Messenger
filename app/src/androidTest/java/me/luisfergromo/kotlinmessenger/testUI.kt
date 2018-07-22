@@ -16,8 +16,8 @@ import org.junit.runner.RunWith
 class testingFlow{
 
     @Rule
-    public ActivityTestRule<MainActivity> mainActivityTestRule =
-    new ActivityTestRule<>(MainActivity.class)
+    public ActivityTestRule<RegisterActivity> mainActivityTestRule =
+    new ActivityTestRule<>(RegisterActivity.class)
 
     @Test
     fun loginTest(){
@@ -30,13 +30,13 @@ class testingFlow{
 @RunWith (AndroidJUnit4::class)
 class UITest {
     //@Rule
-    //class ActivityTestRule<MainActivity>
+    //class ActivityTestRule<RegisterActivity>
     /* README
      * https://stackoverflow.com/questions/37821148/why-cannot-i-import-androidjunit4-and-activitytestrule-into-my-unit-test-class */
     @Test
     fun textView() {
        onView(allOf(withId(R.id.textView)))
-               .check(matches(isDisplayed()));
+               .check(matches(isDisplayed()))
         //onView(withItemText("LOGIN")).check(matches(isDisplayed()))
         //onView(withId(R.id.registerBtn)).perform(click())
         //onView(withId(R.id.loginBtn)).check(matches(isDisplayed()))
@@ -57,7 +57,7 @@ class UITest {
     @Test
     fun usernameHint(){
         onView(withText("Username:"))
-                .check(matches(isDisplayed()));
+                .check(matches(isDisplayed()))
     }
     @Test
     fun emailHint(){
