@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="me.luisfergromo.kotlinmessenger">
 
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        tools:ignore="ManifestOrder" />
+    <uses-permission
+        android:name="android.permission.SET_DEBUG_APP"
+        tools:ignore="ProtectedPermissions" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,31 +18,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity
-            android:name=".RegisterActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".LatestMessagesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:screenOrientation="portrait" />
+            android:name=".RegisterActivity"
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name=".IndexWindow"
+            android:name=".LoginActivity"
             android:screenOrientation="portrait" />
         <meta-data
             android:name="io.fabric.ApiKey"
             android:value="80c4fc5456580ee5153b7c610ef55aa509051585" />
-    </application>
 
-    <uses-permission
-        android:name="android.permission.INTERNET"
-        tools:ignore="ManifestOrder" />
-    <uses-permission
-        android:name="android.permission.SET_DEBUG_APP"
-        tools:ignore="ProtectedPermissions" />
+        <activity android:name=".NewMessageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LatestMessagesActivity" />
+        </activity>
+    </application>
 
 </manifest>
