@@ -7,10 +7,10 @@
     tools:context=".NewMessageActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycleView_newMessage"
-        android:layout_width="0dp"
-        android:layout_height="495dp"
+        android:id="@+id/recyclerview_newmessage"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

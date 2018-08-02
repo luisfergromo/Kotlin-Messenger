@@ -21,26 +21,13 @@ class NewMessageActivity : AppCompatActivity() {
         setContentView(R.layout.activity_new_message)
 
         supportActionBar?.title = "Select User"
-
-        /*
-        val adapter = GroupAdapter<ViewHolder>()
-
-        adapter.add(UserItem())
-        adapter.add(UserItem())
-        adapter.add(UserItem())
-
-        recycleView_newMessage.adapter = adapter
-        */
-
-//        recycleView_newMessage.layoutManager = LinearLayoutManager(this)
-
         fetchUsers()
-
     }
 
     private fun fetchUsers() {
         val ref = FirebaseDatabase.getInstance().getReference("/users")
         ref.addListenerForSingleValueEvent(object : ValueEventListener {
+
             override fun onDataChange(p0: DataSnapshot) {
                 val adapter = GroupAdapter<ViewHolder>()
 
@@ -51,7 +38,8 @@ class NewMessageActivity : AppCompatActivity() {
                         adapter.add(UserItem(user))
                     }
                 }
-                recycleView_newMessage.adapter = adapter
+
+                recyclerview_newmessage.adapter = adapter
             }
 
             override fun onCancelled(p0: DatabaseError) {
@@ -60,15 +48,12 @@ class NewMessageActivity : AppCompatActivity() {
         })
     }
 }
-// TODO: https://youtu.be/SuRiwVF5bzs?t=27m58s
 
 class UserItem(val user: User) : Item<ViewHolder>() {
     override fun bind(viewHolder: ViewHolder, position: Int) {
-        //TODO: will be called in our list for each user object later on...
-        viewHolder.itemView.username_textView.text = user.username
+        viewHolder.itemView.username_textview_new_message.text = user.username
 
-
-        Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.imageView_new_message)
+        Picasso.get().load(user.profileImageUrl).into(viewHolder.itemView.imageview_new_message)
     }
 
     override fun getLayout(): Int {
